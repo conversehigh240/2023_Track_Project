@@ -22,11 +22,12 @@
       <label for="password">비밀번호</label>
       <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 입력해주세요">
     </div>
-    <div>
-      자동로그인<input type="checkbox" name="remember-me">
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="rememberMe" name="remember-me" checked>
+      <label class="form-check-label" for="rememberMe" aria-describedby="rememberMeHelp">로그인 유지</label>
     </div>
     <button type="submit" class="btn btn-primary">로그인</button>
-    <button type="button" class="btn btn-primary" onClick="location.href='signUp'">회원 가입</button>
+    <button type="button" class="btn btn-primary" onClick="location.href='/user/signUp'">회원 가입</button>
   </form>
   <br/>
 </div>

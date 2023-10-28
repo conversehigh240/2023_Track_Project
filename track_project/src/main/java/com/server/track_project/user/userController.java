@@ -51,7 +51,6 @@ public class userController {
         return "login_form";
     }
 
-
     @GetMapping("/user_access")
     public String userAccess(Model model, Authentication authentication) {
         userVO user = (userVO)authentication.getPrincipal();
