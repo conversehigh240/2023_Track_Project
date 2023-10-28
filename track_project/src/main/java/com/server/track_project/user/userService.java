@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Service
@@ -19,8 +20,8 @@ public class userService implements UserDetailsService {
     @Transactional
     public void signUp(userVO uservo) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        uservo.setUserPw(passwordEncoder.encode(uservo.getUserPw()));
-        uservo.setUserAuth("ROLE_USER");
+        uservo.setPassword(passwordEncoder.encode(uservo.getPassword()));
+        uservo.setAuth("ROLE_USER");
         userMapper.saveUser(uservo);
     }
 
@@ -29,7 +30,7 @@ public class userService implements UserDetailsService {
         userVO user = userMapper.getUserAccount(userId);
         if (user == null)
         {
-            throw new UsernameNotFoundException("사용자를 찾을 수 없습니다.");
+            throw new UsernameNotFoundException("Unauthorized");
         }
         return user;
     }
