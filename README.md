@@ -26,4 +26,6 @@ skills: spring boot,h2
 팀원: 권주명, 도윤서 
 
 skills: pytorch, hugging-face
+
+
 <img width="589" alt="image" src="https://github.com/DoYunseo/2023_Track_Project/assets/108567536/c617fcb9-6049-4abe-a0e2-4f50a47ca9d3">
